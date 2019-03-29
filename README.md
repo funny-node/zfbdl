@@ -36,6 +36,9 @@ const { loginByScanQR, loginByCookies, loginByPwd } = require('zfbdl')
 支付宝网页端扫码登录
 
 * `options` `{Object}` 选填，即 [puppeteer.launch([options])](https://pptr.dev/#?product=Puppeteer&version=v1.12.2&show=api-puppeteerlaunchoptions) 参数，程序已经为其提供了合理的默认参数，传入参数可覆盖默认
+  * `headless` 默认 `false`
+  * `slowMo` 默认 `500`
+  * `defaultViewport` 默认 `{width: 1440, height: 900}`
 * return: `<Promise<Page>>`
 
 返回一个新的 [Page](https://pptr.dev/#?product=Puppeteer&version=v1.12.2&show=api-class-page) 对象
