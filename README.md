@@ -31,7 +31,7 @@ const { loginByScanQR, loginByCookies, loginByPwd } = require('zfbdl')
 
 ## API
 
-## loginByScanQR([options])
+### loginByScanQR([options])
 
 支付宝网页端扫码登录
 
@@ -49,7 +49,7 @@ const { loginByScanQR, loginByCookies, loginByPwd } = require('zfbdl')
 * `options` `{Object}` 同 loginByScanQR
 * return: `<Promise<Page>>`
 
-## loginByCookies([options])
+### loginByCookies([options])
 
 支付宝网页端手动设置 cookies 登录
 
