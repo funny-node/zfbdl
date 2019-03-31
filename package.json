@@ -1,7 +1,7 @@
 {
   "name": "zfbdl",
   "description": "利用 puppeteer 模拟登录支付宝",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "author": "fish",
   "main": "index.js",
   "scripts": {

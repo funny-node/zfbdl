@@ -39,9 +39,11 @@ const { loginByScanQR, loginByCookies, loginByPwd } = require('zfbdl')
   * `headless` 默认 `false`
   * `slowMo` 默认 `500`
   * `defaultViewport` 默认 `{width: 1440, height: 900}`
-* return: `<Promise<Page>>`
+* return: `<Promise<Object>>`
+  * `page` [class: Page](https://pptr.dev/#?product=Puppeteer&version=v1.14.0&show=api-class-page)
+  * `browser` [class: Browser](https://pptr.dev/#?product=Puppeteer&version=v1.14.0&show=api-class-browser)
 
-返回一个新的 [Page](https://pptr.dev/#?product=Puppeteer&version=v1.12.2&show=api-class-page) 对象
+返回一个新的 Page 对象和 Browser 对象
 
 ### loginByPwd(username, password[, options])
 
@@ -50,14 +52,14 @@ const { loginByScanQR, loginByCookies, loginByPwd } = require('zfbdl')
 * `username` `{String}` 账号
 * `password` `{String}` 密码
 * `options` `{Object}` 同 loginByScanQR
-* return: `<Promise<Page>>`
+* return: `<Promise<Object>>`
 
 ### loginByCookies([options])
 
 支付宝网页端手动设置 cookies 登录
 
 * `options` `{Object}` 同 loginByScanQR
-* return: `<Promise<Page>>`
+* return: `<Promise<Object>>`
 
 手动设置 cookies，需要在项目根目录下新建 `cookierc.js` 文件，文件内容为一个 js 导出模块，导出一个数组，类似如下：
 

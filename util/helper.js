@@ -22,8 +22,8 @@ function setupBrowser(options = {}) {
     const browser = await puppeteer.launch(defaultOptions)
 
     const page = await browser.newPage()
-    resolve(page)
-  }) 
+    resolve({ page, browser })
+  })
 }
 
 module.exports.setupBrowser = setupBrowser

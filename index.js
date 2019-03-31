@@ -10,7 +10,7 @@ const loginByPwd = require('./lib/login_by_pwd')
  */
 function loginByScanQR(options) {
   return new Promise(async resolve => {
-    const page = await setupBrowser(options)
+    const { page, browser } = await setupBrowser(options)
 
     // 没有登录，会跳出二维码
     await page.goto('https://consumeprod.alipay.com/record/standard.htm')
@@ -18,7 +18,7 @@ function loginByScanQR(options) {
     // 二维码等待扫描或者有时操作频繁需要扫描验证
     try {
       await page.waitForSelector('.J-item', { timeout: 0 })
-      resolve(page)
+      resolve({ page, browser })
     } catch (e) {
       if (e instanceof TimeoutError) {
         // 如果超时，做一些处理
@@ -34,7 +34,7 @@ function loginByScanQR(options) {
  */
 function loginByCookies(options) {
   return new Promise(async resolve => {
-    const page = await setupBrowser(options)
+    const { page, browser } = await setupBrowser(options)
 
     try {
       const cookies = require(path.join(appDir, 'cookierc'))
@@ -44,7 +44,7 @@ function loginByCookies(options) {
       // 有时操作频繁需要扫描验证
       try {
         await page.waitForSelector('.J-item', { timeout: 0 })
-        resolve(page)
+        resolve({ page, browser })
       } catch (e) {
         if (e instanceof TimeoutError) {
           // 如果超时，做一些处理
